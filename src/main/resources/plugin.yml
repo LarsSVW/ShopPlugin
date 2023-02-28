@@ -1,0 +1,20 @@
+name: Shops
+version: 3.0
+api-version: 1.13
+authors:
+  - Lars_SVW
+  - Sombeyyy
+main: de.lars.shop.ShopPlugin
+description: A plugin that allows players to set their own shopping points.
+
+commands:
+  delshop:
+    description: Deletes the shop
+  setshop:
+    description: Sets the shop
+  shop:
+    description: Teleports to specified shop
+  shops:
+    description: List available shops in GUI
+  shopadvertise:
+    description: Advertise your shop
