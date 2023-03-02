@@ -52,16 +52,16 @@ public class ShopGuiService {
         gui.addPane(pages);
 
         OutlinePane background = new OutlinePane(0, 5, 9, 1);
-        background.addItem(new GuiItem(new ItemStack(Material.BLACK_STAINED_GLASS_PANE)));
+        background.addItem(new GuiItem(new ItemStack(Material.getMaterial(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("GUI_Filler", "BLACK_STAINED_GLASS_PANE"))))));
         background.setRepeat(true);
         background.setPriority(Pane.Priority.LOWEST);
 
         gui.addPane(background);
 
         StaticPane navigation = new StaticPane(0, 5, 9, 1);
-        ItemStack previous = new ItemStack(Material.RED_WOOL);
+        ItemStack previous = new ItemStack(Material.getMaterial(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("Previous_Page_Material", "RED_WOOL"))));
         ItemMeta previousMeta = previous.getItemMeta();
-        previousMeta.setDisplayName("-");
+        previousMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("Previous_Page_Name", "Previous_Page")));
         previous.setItemMeta(previousMeta);
         navigation.addItem(new GuiItem(previous, event -> {
             event.setCancelled(true);
@@ -71,9 +71,9 @@ public class ShopGuiService {
                 gui.update();
             }
         }), 0, 0);
-        ItemStack next = new ItemStack(Material.GREEN_WOOL);
+        ItemStack next = new ItemStack(Material.getMaterial(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("Next_Page_Material", "GREEN_WOOL"))));
         ItemMeta nextMeta = next.getItemMeta();
-        nextMeta.setDisplayName("+");
+        nextMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("Next_Page_Name", "Next page")));
         next.setItemMeta(nextMeta);
         navigation.addItem(new GuiItem(next, event -> {
             event.setCancelled(true);
@@ -83,9 +83,9 @@ public class ShopGuiService {
                 gui.update();
             }
         }), 8, 0);
-        ItemStack close = new ItemStack(Material.BARRIER);
+        ItemStack close = new ItemStack(Material.getMaterial(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("Close_Material", "BARRIER"))));
         ItemMeta closeMeta = close.getItemMeta();
-        closeMeta.setDisplayName("§r§cClose");
+        closeMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("Close_Name", "§c§lClose")));
         close.setItemMeta(closeMeta);
         navigation.addItem(new GuiItem(close, event ->
                 event.getWhoClicked().closeInventory()), 4, 0);

@@ -26,6 +26,7 @@ public class ShopReloadCommand implements CommandExecutor {
             plugin.getConfig().reloadConfig();
             plugin.getMessageHandler().reloadMessages();
             plugin.getShopHandler().reloadShops();
+            plugin.getShopGuiService().updateGui();
             sender.sendMessage(plugin.getMessageHandler().getMessage("reload_message").orElse("§aPlugin reloaded"));
         }else{
             sender.sendMessage(plugin.getMessageHandler().getMessage("no_permission").orElse("§cYou have no authorization to do so."));

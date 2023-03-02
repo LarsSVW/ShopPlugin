@@ -1,2 +1,9 @@
 update_shop_names: true
 advertisement_interval: 10
+Next_Page_Material: "GREEN_WOOL"
+Next_Page_Name: "&aNext page"
+Previous_Page_Material: "RED_WOOL"
+Previous_Page_Name: "&cPrevious Page"
+Close_Material: "BARRIER"
+Close_Name: "&cClose"
+GUI_Filler: "BLACK_STAINED_GLASS_PANE"
