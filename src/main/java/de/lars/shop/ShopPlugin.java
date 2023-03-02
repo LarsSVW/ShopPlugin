@@ -43,6 +43,7 @@ public class ShopPlugin extends JavaPlugin {
         getCommand("shopadvertise").setExecutor(new ShopAdvertiseCommand(this));
         getCommand("shop").setExecutor(new ShopCommand(this));
         getCommand("shops").setExecutor(new ShopsCommand(this));
+        getCommand("shopreload").setExecutor(new ShopReloadCommand(this));
     }
 
     private void registerEvents() {

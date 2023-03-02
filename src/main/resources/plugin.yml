@@ -18,3 +18,5 @@ commands:
     description: List available shops in GUI
   shopadvertise:
     description: Advertise your shop
+  shopreload:
+    description: Reloads the Plugin

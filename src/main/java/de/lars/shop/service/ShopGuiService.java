@@ -7,6 +7,7 @@ import com.github.stefvanschie.inventoryframework.pane.PaginatedPane;
 import com.github.stefvanschie.inventoryframework.pane.Pane;
 import com.github.stefvanschie.inventoryframework.pane.StaticPane;
 import de.lars.shop.ShopPlugin;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -39,6 +40,9 @@ public class ShopGuiService {
             item.setItemMeta(meta);
             shops.add(new GuiItem(item, event -> {
                 event.getWhoClicked().teleport(shop.getLocation());
+                event.getWhoClicked().sendMessage(plugin.getMessageHandler()
+                        .getMessage("teleported_to_shop")
+                        .orElse("§aYou have been teleported to the shop."));
             }));
         });
 
